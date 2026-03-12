@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { QUESTIONS } from "@/lib/constants/questions";
 import { createEmptyScore, addChoiceToScore, calculateTypeCode } from "@/features/quiz/scorer";
@@ -15,14 +15,25 @@ type QuizStepClientProps = {
 
 export function QuizStepClient({ initialStep }: QuizStepClientProps) {
   const router = useRouter();
-  const [currentStep, setCurrentStep] = useState(initialStep);
+  const safeInitial = Number.isFinite(initialStep) && initialStep >= 1 ? initialStep : 1;
+  const [currentStep, setCurrentStep] = useState(safeInitial);
   const [score, setScore] = useState<Score>(createEmptyScore);
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const [isTransitioning, setIsTransitioning] = useState(false);
   const question = QUESTIONS[currentStep - 1];
   const isLastQuestion = currentStep === QUESTIONS.length;
 
+  // 範囲外の場合は診断開始ページへリダイレクト
+  useEffect(() => {
+    if (!question && !isTransitioning) {
+      router.replace("/quiz/start");
+    }
+  }, [question, isTransitioning, router]);
+
   const handleSelect = useCallback(
     (choice: Choice) => {
+      if (isTransitioning) return;
+
       const choiceIndex = question.choices.indexOf(choice);
       setSelectedIndex(choiceIndex);
 
@@ -31,28 +42,30 @@ export function QuizStepClient({ initialStep }: QuizStepClientProps) {
 
       setTimeout(() => {
         if (isLastQuestion) {
+          setIsTransitioning(true);
           const typeCode = calculateTypeCode(newScore);
           const typeData = getTypeByCode(typeCode);
-          if (typeData) {
-            if (typeof window !== "undefined") {
-              sessionStorage.setItem("dsop_score", JSON.stringify(newScore));
-              sessionStorage.setItem("dsop_type", typeCode);
-            }
-            router.push(`/result/${typeData.nameEn.toLowerCase()}`);
+          if (typeof window !== "undefined") {
+            sessionStorage.setItem("dsop_score", JSON.stringify(newScore));
+            sessionStorage.setItem("dsop_type", typeCode);
           }
+          const slug = typeData
+            ? typeData.nameEn.toLowerCase()
+            : "strategist";
+          router.push(`/result/${slug}`);
         } else {
           setCurrentStep((prev) => prev + 1);
           setSelectedIndex(null);
         }
       }, 400);
     },
-    [score, isLastQuestion, question, router]
+    [score, isLastQuestion, question, router, isTransitioning]
   );
 
   if (!question) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <p className="text-card-white/50">設問が見つかりません</p>
+        <div className="w-6 h-6 border-2 border-gold/30 border-t-gold animate-spin rounded-full" />
       </div>
     );
   }
