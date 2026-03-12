@@ -44,7 +44,7 @@ export function TopPageClient() {
             transition={{ duration: 0.6, delay: 0.45 }}
             className="mt-6 text-sm text-card-white/35 max-w-md mx-auto leading-relaxed"
           >
-            50の問いから、あなたの意思決定を4つの軸で分析。
+            56の問いから、あなたの意思決定を4つの軸で分析。
             <br />
             16タイプの中から、あなただけのポーカースタイルを導き出す。
           </motion.p>
@@ -65,7 +65,7 @@ export function TopPageClient() {
               </span>
             </Link>
             <p className="mt-4 text-[11px] text-card-white/20 tracking-wider">
-              約10分 / 50問 / 無料
+              約12分 / 56問 / 無料
             </p>
           </motion.div>
         </div>

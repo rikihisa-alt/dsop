@@ -2,7 +2,7 @@ import type { Question } from "@/lib/types";
 
 export const QUESTIONS: Question[] = [
   // ============================================================
-  //  UC軸（Unpredictable vs Controlled）— 13問
+  //  UC軸（Unpredictable vs Controlled）— 14問
   // ============================================================
   {
     id: 1,
@@ -135,11 +135,22 @@ export const QUESTIONS: Question[] = [
     ],
   },
 
-  // ============================================================
-  //  AR軸（Aggressive vs Reserved）— 13問
-  // ============================================================
   {
     id: 14,
+    text: "自分のテーブルイメージがバレてると感じた。どうする？",
+    choices: [
+      { label: "すぐスタイルを180度変える。読まれたら終わり", scores: { UC: 3, FD: 1 } },
+      { label: "バレてても関係ない。勝てるプレーを続ける", scores: { UC: -2, AR: 1 } },
+      { label: "逆手に取って裏をかく", scores: { UC: 2, LH: 1 } },
+      { label: "少しずつ微調整していく", scores: { UC: -1, LH: 1 } },
+    ],
+  },
+
+  // ============================================================
+  //  AR軸（Aggressive vs Reserved）— 14問
+  // ============================================================
+  {
+    id: 15,
     text: "フロップでトップペアヒット。ボードはフラッシュドロー含み。",
     choices: [
       { label: "でかく打ってドロー勢を追い出す", scores: { AR: 3, FD: 1 } },
@@ -149,7 +160,7 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    id: 15,
+    id: 16,
     text: "ファイナルテーブルのバブル。あなたのスタンスは？",
     choices: [
       { label: "バブルは稼ぎ時。全員にプレッシャーかける", scores: { AR: 3, UC: 2 } },
@@ -159,7 +170,7 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    id: 16,
+    id: 17,
     text: "3ベット。どのくらいの頻度で使ってる？",
     choices: [
       { label: "かなり広いレンジで積極的に3ベットする", scores: { AR: 3, UC: 1 } },
@@ -169,7 +180,7 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    id: 17,
+    id: 18,
     text: "ヘッズアップ。相手がやたらタイトに打ってる。",
     choices: [
       { label: "全ハンドでレイズ。ひたすら圧をかける", scores: { AR: 3, UC: 2 } },
@@ -179,7 +190,7 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    id: 18,
+    id: 19,
     text: "リバーでブラフキャッチの局面。相手のベットは大きい。",
     choices: [
       { label: "ブラフ臭い。コールする", scores: { AR: 1, LH: -2 } },
@@ -189,7 +200,7 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    id: 19,
+    id: 20,
     text: "フロップ空振り。Cベットする？",
     choices: [
       { label: "ほぼ必ず打つ。アグレッションは最大の武器", scores: { AR: 3, UC: 1 } },
@@ -199,7 +210,7 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    id: 20,
+    id: 21,
     text: "マルチウェイポット（3人以上）。どうする？",
     choices: [
       { label: "人数関係ない。打つべきと思ったら打つ", scores: { AR: 3, UC: 2 } },
@@ -209,7 +220,7 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    id: 21,
+    id: 22,
     text: "レイトポジションでフォールドが回ってきた。ハンドはまあまあ。",
     choices: [
       { label: "スチールするに決まってる。サイズも大きめに", scores: { AR: 3, FD: 1 } },
@@ -219,7 +230,7 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    id: 22,
+    id: 23,
     text: "相手がドンクベット（先にベット）してきた。どう感じる？",
     choices: [
       { label: "弱い証拠。レイズで返す", scores: { AR: 3, UC: 1 } },
@@ -229,7 +240,7 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    id: 23,
+    id: 24,
     text: "ポストフロップでポジションがない（OOP）。基本スタンスは？",
     choices: [
       { label: "リードベットで主導権を取りに行く", scores: { AR: 3, UC: 1 } },
@@ -239,7 +250,7 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    id: 24,
+    id: 25,
     text: "4ベットを受けた。ハンドはAQs。",
     choices: [
       { label: "5ベットオールイン。降りる気はない", scores: { AR: 3, UC: 2 } },
@@ -249,7 +260,7 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    id: 25,
+    id: 26,
     text: "セミブラフ（ドロー+ベット）。どの程度使う？",
     choices: [
       { label: "ドローがあれば積極的にぶつけていく", scores: { AR: 3, FD: 1 } },
@@ -259,7 +270,7 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    id: 26,
+    id: 27,
     text: "テーブル全体がタイトな時。あなたはどうする？",
     choices: [
       { label: "チャンス。レイズ頻度を上げてスチールしまくる", scores: { AR: 3, UC: 1 } },
@@ -269,11 +280,22 @@ export const QUESTIONS: Question[] = [
     ],
   },
 
+  {
+    id: 28,
+    text: "大きなドローが完成。相手はまだ気づいてなさそう。",
+    choices: [
+      { label: "でかく打ってマキシマムバリューを取りに行く", scores: { AR: 3, FD: 1 } },
+      { label: "中くらいに抑えてコールされやすくする", scores: { AR: 1, LH: 2 } },
+      { label: "チェックでトラップ。相手に打たせる", scores: { AR: -2, UC: 1 } },
+      { label: "スロープレーで次のストリートに持ち越す", scores: { AR: -3, FD: -1 } },
+    ],
+  },
+
   // ============================================================
-  //  LH軸（Logical vs Holistic）— 12問
+  //  LH軸（Logical vs Holistic）— 14問
   // ============================================================
   {
-    id: 27,
+    id: 29,
     text: "大事なポットでの最終判断。一番頼りにするのは？",
     choices: [
       { label: "オッズとアウツの計算結果", scores: { LH: 3, FD: -1 } },
@@ -283,7 +305,7 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    id: 28,
+    id: 30,
     text: "ポーカーの上達法として一番大事にしてるのは？",
     choices: [
       { label: "ソルバーやGTOツールでの研究", scores: { LH: 3, FD: -2 } },
@@ -293,7 +315,7 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    id: 29,
+    id: 31,
     text: "相手のハンドを読むとき、どうアプローチする？",
     choices: [
       { label: "プリフロップからのアクションでレンジを絞る", scores: { LH: 3, FD: -1 } },
@@ -303,7 +325,7 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    id: 30,
+    id: 32,
     text: "セッション後の振り返り。何を一番チェックする？",
     choices: [
       { label: "EV計算やハンドヒストリーの数値分析", scores: { LH: 3, FD: -2 } },
@@ -313,7 +335,7 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    id: 31,
+    id: 33,
     text: "ドローを追うかどうか、何で決める？",
     choices: [
       { label: "インプライドオッズ込みで期待値計算する", scores: { LH: 3, AR: 0 } },
@@ -323,7 +345,7 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    id: 32,
+    id: 34,
     text: "テーブルで一番目が行く情報は？",
     choices: [
       { label: "各プレーヤーのスタックサイズとポット額", scores: { LH: 3, AR: 0 } },
@@ -333,7 +355,7 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    id: 33,
+    id: 35,
     text: "ブラフする時の一番の理由は？",
     choices: [
       { label: "フォールドエクイティが数字的に十分だから", scores: { LH: 3, AR: 1 } },
@@ -343,7 +365,7 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    id: 34,
+    id: 36,
     text: "GTO（ゲーム理論最適）プレーについてどう思う？",
     choices: [
       { label: "ベースとして絶対必要。常に意識してる", scores: { LH: 3, UC: -1 } },
@@ -353,7 +375,7 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    id: 35,
+    id: 37,
     text: "ハンド中に「これは罠だ」と感じた。根拠は？",
     choices: [
       { label: "ベットラインが不自然。論理的に合わない", scores: { LH: 3, FD: -1 } },
@@ -363,7 +385,7 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    id: 36,
+    id: 38,
     text: "ポーカーで一番大事なスキルは何だと思う？",
     choices: [
       { label: "数学的思考と確率計算", scores: { LH: 3, FD: -1 } },
@@ -373,7 +395,7 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    id: 37,
+    id: 39,
     text: "HUD（統計ツール）やノートの使い方は？",
     choices: [
       { label: "フル活用。データなしでは打てない", scores: { LH: 3, FD: -2 } },
@@ -383,7 +405,7 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    id: 38,
+    id: 40,
     text: "エクイティ計算（勝率計算）をハンド中にする？",
     choices: [
       { label: "常にざっくり計算してる。基本中の基本", scores: { LH: 3, FD: -1 } },
@@ -393,11 +415,32 @@ export const QUESTIONS: Question[] = [
     ],
   },
 
+  {
+    id: 41,
+    text: "相手のベットのタイミングが不自然に遅かった。何を考える？",
+    choices: [
+      { label: "弱いハンドで悩んでた証拠。攻めるチャンス", scores: { LH: 2, AR: 1 } },
+      { label: "タイミングテルは不確実。他の情報と合わせて判断", scores: { LH: 3, FD: -1 } },
+      { label: "なんか怪しい。トラップの匂いがする", scores: { LH: -2, UC: 0 } },
+      { label: "演技（ハリウッド）の可能性を感じる", scores: { LH: -1, UC: 1 } },
+    ],
+  },
+  {
+    id: 42,
+    text: "バッドビートを食らった直後のハンド。あなたの思考は？",
+    choices: [
+      { label: "前のハンドは前のハンド。確率的に独立してると割り切る", scores: { LH: 3, FD: 0 } },
+      { label: "悔しさをバネにアグレッシブにいく", scores: { LH: -2, AR: 2 } },
+      { label: "嫌な流れを感じるから少し慎重になる", scores: { LH: -3, FD: -1 } },
+      { label: "冷静になる時間が必要。1〜2ハンド休む", scores: { LH: 0, FD: -2 } },
+    ],
+  },
+
   // ============================================================
-  //  FD軸（Fast vs Deliberate）— 12問
+  //  FD軸（Fast vs Deliberate）— 14問
   // ============================================================
   {
-    id: 39,
+    id: 43,
     text: "でかいポット。リバーで難しい判断。あなたの速度は？",
     choices: [
       { label: "数秒で決める。長考はテルになる", scores: { FD: 3, UC: 1 } },
@@ -407,7 +450,7 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    id: 40,
+    id: 44,
     text: "タイムバンク、どう使ってる？",
     choices: [
       { label: "ほぼ使わない。考える前に手が動いてる", scores: { FD: 3, AR: 1 } },
@@ -417,7 +460,7 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    id: 41,
+    id: 45,
     text: "プリフロップ。ハンド見てからアクションまでの速さは？",
     choices: [
       { label: "ハンド見た瞬間にもう決まってる", scores: { FD: 3, LH: -1 } },
@@ -427,7 +470,7 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    id: 42,
+    id: 46,
     text: "マルチテーブル（多面打ち）についてどう思う？",
     choices: [
       { label: "得意。判断早いから何面でもいける", scores: { FD: 3, UC: 0 } },
@@ -437,7 +480,7 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    id: 43,
+    id: 47,
     text: "新しい戦略を覚えた。実戦に投入するタイミングは？",
     choices: [
       { label: "即投入。実戦で試すのが一番早い", scores: { FD: 3, UC: 1 } },
@@ -447,7 +490,7 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    id: 44,
+    id: 48,
     text: "ショートスタックに追い込まれた。どう対応する？",
     choices: [
       { label: "即座にオールインのチャンスを探す", scores: { FD: 3, AR: 2 } },
@@ -457,7 +500,7 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    id: 45,
+    id: 49,
     text: "ポーカーにおける「運」。あなたの考えは？",
     choices: [
       { label: "短期は運ゲー、長期は実力。気にしない", scores: { FD: 1, LH: 2 } },
@@ -467,7 +510,7 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    id: 46,
+    id: 50,
     text: "オールインの判断。どのくらいの速さで決める？",
     choices: [
       { label: "即決。迷ったら負けだと思ってる", scores: { FD: 3, AR: 1 } },
@@ -477,7 +520,7 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    id: 47,
+    id: 51,
     text: "テーブルでの情報処理。あなたのスタイルは？",
     choices: [
       { label: "パッと見て直感で判断。細かく考えない", scores: { FD: 3, LH: -2 } },
@@ -487,7 +530,7 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    id: 48,
+    id: 52,
     text: "ポットが小さい場面での判断は？",
     choices: [
       { label: "サクサク決めてテンポ重視。考える時間がもったいない", scores: { FD: 3, UC: 0 } },
@@ -497,7 +540,7 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    id: 49,
+    id: 53,
     text: "判断に迷った時のデフォルトのアクションは？",
     choices: [
       { label: "迷ったらアクション。止まるくらいなら攻める", scores: { FD: 3, AR: 2 } },
@@ -507,13 +550,33 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    id: 50,
+    id: 54,
     text: "長時間セッションでの判断の質について。",
     choices: [
       { label: "判断速度は変わらない。むしろ後半の方がキレる", scores: { FD: 3, UC: 0 } },
       { label: "疲れたら意識的にペースを落として精度を維持", scores: { FD: -3, LH: 1 } },
       { label: "後半は少し雑になるが大きくは崩れない", scores: { FD: 1, UC: 0 } },
       { label: "長時間は苦手。集中力が切れる前にやめる", scores: { FD: -1, LH: 0 } },
+    ],
+  },
+  {
+    id: 55,
+    text: "テーブルの雰囲気が急変（新メンバー加入等）。適応速度は？",
+    choices: [
+      { label: "即対応。変化にはリアルタイムで反応する", scores: { FD: 3, UC: 1 } },
+      { label: "しばらく観察してから方針を変える", scores: { FD: -3, LH: 1 } },
+      { label: "とりあえず仕掛けて反応を見る", scores: { FD: 2, AR: 1 } },
+      { label: "基本変えない。自分のペースで打つだけ", scores: { FD: -1, UC: -1 } },
+    ],
+  },
+  {
+    id: 56,
+    text: "制限時間が短いターボトーナメント。あなたの感想は？",
+    choices: [
+      { label: "むしろ好き。テンポよく決断できる", scores: { FD: 3, AR: 0 } },
+      { label: "苦手。考える時間がないと精度が落ちる", scores: { FD: -3, LH: 1 } },
+      { label: "普通にやれる。決断スピードは変わらない", scores: { FD: 1, LH: 0 } },
+      { label: "相手も考えられないから意外とイーブン", scores: { FD: -1, LH: 2 } },
     ],
   },
 ];
