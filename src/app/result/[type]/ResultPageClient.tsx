@@ -25,7 +25,7 @@ export function ResultPageClient({ typeData }: ResultPageClientProps) {
 
   return (
     <div className="min-h-screen">
-      {/* タイプ名の大きな登場 */}
+      {/* タイプリビール */}
       <section className="min-h-[70vh] flex items-center justify-center px-6 pt-16">
         <TypeReveal
           nameEn={typeData.nameEn}
@@ -34,7 +34,7 @@ export function ResultPageClient({ typeData }: ResultPageClientProps) {
         />
       </section>
 
-      {/* タグラインとスタイル説明 */}
+      {/* タグライン & 説明 */}
       <section className="px-6 pb-16">
         <div className="max-w-2xl mx-auto">
           <motion.div
@@ -43,10 +43,10 @@ export function ResultPageClient({ typeData }: ResultPageClientProps) {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <blockquote className="text-xl md:text-2xl font-display text-gold italic border-l-2 border-gold/30 pl-6 mb-8">
-              {typeData.tagline}
+            <blockquote className="text-lg md:text-xl font-display text-gold/80 italic border-l-2 border-gold/20 pl-6 mb-8">
+              &ldquo;{typeData.tagline}&rdquo;
             </blockquote>
-            <p className="text-base text-card-white/70 leading-relaxed">
+            <p className="text-sm md:text-base text-card-white/60 leading-relaxed">
               {typeData.description}
             </p>
           </motion.div>
@@ -62,7 +62,7 @@ export function ResultPageClient({ typeData }: ResultPageClientProps) {
             viewport={{ once: true }}
             transition={{ duration: 0.4 }}
           >
-            <p className="font-mono text-xs tracking-[0.3em] text-gold/50 mb-8">
+            <p className="font-mono text-[10px] tracking-[0.5em] text-gold/30 mb-8 text-center">
               YOUR AXES
             </p>
             <AxisChart score={score} />
@@ -70,7 +70,7 @@ export function ResultPageClient({ typeData }: ResultPageClientProps) {
         </div>
       </section>
 
-      {/* 良いところ & 注意点 */}
+      {/* Strengths & Watch Out */}
       <section className="px-6 py-16 border-t border-gold/5">
         <div className="max-w-3xl mx-auto">
           <div className="grid md:grid-cols-[1fr,1px,1fr] gap-12 md:gap-8">
@@ -80,13 +80,13 @@ export function ResultPageClient({ typeData }: ResultPageClientProps) {
               viewport={{ once: true }}
               transition={{ duration: 0.4 }}
             >
-              <p className="font-mono text-xs tracking-[0.3em] text-emerald-400/70 mb-6">
+              <p className="font-mono text-[10px] tracking-[0.5em] text-emerald-400/60 mb-6">
                 STRENGTHS
               </p>
               <ul className="space-y-3">
                 {typeData.strengths.map((s, i) => (
-                  <li key={i} className="flex items-start gap-3 text-card-white/70">
-                    <span className="text-emerald-400 mt-0.5 shrink-0">+</span>
+                  <li key={i} className="flex items-start gap-3 text-sm text-card-white/60">
+                    <span className="text-emerald-400/80 mt-0.5 shrink-0 text-xs">+</span>
                     <span>{s}</span>
                   </li>
                 ))}
@@ -101,13 +101,13 @@ export function ResultPageClient({ typeData }: ResultPageClientProps) {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 0.1 }}
             >
-              <p className="font-mono text-xs tracking-[0.3em] text-chip-red/70 mb-6">
+              <p className="font-mono text-[10px] tracking-[0.5em] text-chip-red/60 mb-6">
                 WATCH OUT
               </p>
               <ul className="space-y-3">
                 {typeData.weaknesses.map((w, i) => (
-                  <li key={i} className="flex items-start gap-3 text-card-white/70">
-                    <span className="text-chip-red mt-0.5 shrink-0">!</span>
+                  <li key={i} className="flex items-start gap-3 text-sm text-card-white/60">
+                    <span className="text-chip-red/80 mt-0.5 shrink-0 text-xs">!</span>
                     <span>{w}</span>
                   </li>
                 ))}
@@ -130,21 +130,21 @@ export function ResultPageClient({ typeData }: ResultPageClientProps) {
             <ShareButton typeData={typeData} />
 
             <div className="pt-8 border-t border-gold/10">
-              <p className="text-sm text-card-white/40 mb-4">
+              <p className="text-xs text-card-white/30 mb-4">
                 さらに詳しい分析を見る
               </p>
               <Link
                 href={`/result/${typeData.nameEn.toLowerCase()}/detail`}
-                className="inline-block px-8 py-3 border border-gold/30 text-gold text-sm tracking-wide hover:bg-gold/10 transition-colors"
+                className="inline-block px-8 py-3 border border-gold/20 text-gold/80 text-sm tracking-wide hover:bg-gold/10 hover:border-gold/40 transition-all duration-300"
               >
-                詳細レポートを見る（有料）
+                詳細レポートを見る
               </Link>
             </div>
 
             <div className="pt-4">
               <Link
                 href="/quiz/start"
-                className="text-xs text-card-white/30 hover:text-card-white/50 transition-colors"
+                className="text-xs text-card-white/20 hover:text-card-white/40 transition-colors"
               >
                 もう一度診断する
               </Link>

@@ -34,7 +34,6 @@ export function QuizStepClient({ initialStep }: QuizStepClientProps) {
           const typeCode = calculateTypeCode(newScore);
           const typeData = getTypeByCode(typeCode);
           if (typeData) {
-            // Store score in sessionStorage for the result page
             if (typeof window !== "undefined") {
               sessionStorage.setItem("dsop_score", JSON.stringify(newScore));
               sessionStorage.setItem("dsop_type", typeCode);
@@ -47,7 +46,7 @@ export function QuizStepClient({ initialStep }: QuizStepClientProps) {
         }
       }, 400);
     },
-    [currentStep, score, isLastQuestion, question, router]
+    [score, isLastQuestion, question, router]
   );
 
   if (!question) {
@@ -62,6 +61,9 @@ export function QuizStepClient({ initialStep }: QuizStepClientProps) {
     <div className="min-h-screen flex flex-col px-6 py-8">
       <div className="max-w-2xl mx-auto w-full pt-12">
         <ProgressBar current={currentStep} total={QUESTIONS.length} />
+        <p className="text-right mt-2 font-mono text-[10px] text-card-white/20 tracking-wider">
+          Q{currentStep} / {QUESTIONS.length}
+        </p>
       </div>
 
       <div className="flex-1 flex items-center justify-center py-12">
@@ -73,8 +75,8 @@ export function QuizStepClient({ initialStep }: QuizStepClientProps) {
       </div>
 
       <div className="text-center pb-8">
-        <p className="text-xs font-mono text-card-white/20">
-          直感で答えてください。正解はありません。
+        <p className="text-[11px] font-mono text-card-white/15 tracking-wider">
+          直感で答えてください
         </p>
       </div>
     </div>
