@@ -58,15 +58,15 @@ export function QuizStepClient({ initialStep }: QuizStepClientProps) {
   }
 
   return (
-    <div className="min-h-screen flex flex-col px-6 py-8">
-      <div className="max-w-2xl mx-auto w-full pt-12">
+    <div className="min-h-screen flex flex-col px-4 md:px-6 py-6 md:py-8">
+      <div className="max-w-2xl mx-auto w-full pt-8 md:pt-12">
         <ProgressBar current={currentStep} total={QUESTIONS.length} />
-        <p className="text-right mt-2 font-mono text-[10px] text-card-white/20 tracking-wider">
+        <p className="text-right mt-1.5 font-mono text-[10px] text-card-white/20 tracking-wider">
           Q{currentStep} / {QUESTIONS.length}
         </p>
       </div>
 
-      <div className="flex-1 flex items-center justify-center py-12">
+      <div className="flex-1 flex items-center justify-center py-6 md:py-12">
         <QuestionCard
           question={question}
           onSelect={handleSelect}
@@ -74,8 +74,8 @@ export function QuizStepClient({ initialStep }: QuizStepClientProps) {
         />
       </div>
 
-      <div className="text-center pb-8">
-        <p className="text-[11px] font-mono text-card-white/15 tracking-wider">
+      <div className="text-center pb-6 md:pb-8">
+        <p className="text-[10px] md:text-[11px] font-mono text-card-white/15 tracking-wider">
           直感で答えてください
         </p>
       </div>

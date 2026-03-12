@@ -18,13 +18,13 @@ export function QuestionCard({ question, onSelect, selectedIndex }: QuestionCard
         animate={{ opacity: 1, x: 0 }}
         exit={{ opacity: 0, x: -30 }}
         transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-        className="w-full max-w-2xl mx-auto"
+        className="w-full max-w-2xl mx-auto px-1"
       >
-        <p className="text-base md:text-lg text-card-white/90 mb-10 leading-relaxed">
+        <p className="text-[15px] md:text-lg text-card-white/90 mb-8 md:mb-10 leading-[1.8]">
           {question.text}
         </p>
 
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-2.5 md:gap-3">
           {question.choices.map((choice, index) => (
             <motion.button
               key={index}
@@ -32,7 +32,8 @@ export function QuestionCard({ question, onSelect, selectedIndex }: QuestionCard
               whileTap={{ scale: 0.98 }}
               onClick={() => onSelect(choice)}
               className={`
-                text-left px-5 py-4 rounded-sm border transition-all duration-200 text-sm
+                text-left px-4 py-3.5 md:px-5 md:py-4 rounded-sm border transition-all duration-200
+                text-[13px] md:text-sm leading-[1.6]
                 ${
                   selectedIndex === index
                     ? "border-gold/60 bg-gold/10 text-gold"
@@ -40,7 +41,7 @@ export function QuestionCard({ question, onSelect, selectedIndex }: QuestionCard
                 }
               `}
             >
-              <span className="inline-block w-6 text-[10px] font-mono text-card-white/20">
+              <span className="inline-block w-5 md:w-6 text-[10px] font-mono text-card-white/20 shrink-0">
                 {String.fromCharCode(65 + index)}.
               </span>
               {choice.label}
