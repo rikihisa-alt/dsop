@@ -1,7 +1,9 @@
 import type { Question } from "@/lib/types";
 
 export const QUESTIONS: Question[] = [
-  // === UC軸（Unpredictable vs Controlled）===
+  // ============================================================
+  //  UC軸（Unpredictable vs Controlled）— 13問
+  // ============================================================
   {
     id: 1,
     text: "スーテッドコネクター。ポジションは微妙。さて、どうする？",
@@ -9,7 +11,7 @@ export const QUESTIONS: Question[] = [
       { label: "ポジション？関係ない。レイズで仕掛ける", scores: { UC: 3, AR: 1 } },
       { label: "ポジションが良ければ参加、悪ければ降りる", scores: { UC: -2, LH: 1 } },
       { label: "安く見れるならリンプで覗きに行く", scores: { UC: -1, AR: -2 } },
-      { label: "周りのプレーヤーの雰囲気次第で変える", scores: { UC: 2, LH: -2 } },
+      { label: "周りの空気感を見てからアクションを変える", scores: { UC: 2, LH: -2 } },
     ],
   },
   {
@@ -17,9 +19,9 @@ export const QUESTIONS: Question[] = [
     text: "3回連続ブラフして2回成功。また良さそうなスポットが来た。",
     choices: [
       { label: "ノってるからもう1発いく", scores: { UC: 3, FD: 2 } },
-      { label: "さすがに警戒されてるからバリューに切り替える", scores: { UC: -2, LH: 2 } },
+      { label: "さすがに警戒されてるからバリューに切り替え", scores: { UC: -2, LH: 2 } },
       { label: "ここはおとなしくする。やりすぎは禁物", scores: { UC: -3, AR: -1 } },
-      { label: "相手のリアクション見てから考える", scores: { UC: 0, FD: -2 } },
+      { label: "相手のリアクション見てから判断する", scores: { UC: 0, FD: -2 } },
     ],
   },
   {
@@ -44,12 +46,12 @@ export const QUESTIONS: Question[] = [
   },
   {
     id: 5,
-    text: "トーナメント中盤、平均の2倍チップ持ってる。どう立ち回る？",
+    text: "同じ相手と何度も当たる日。あなたの対応は？",
     choices: [
-      { label: "この優位を活かしてテーブルを支配する", scores: { UC: 2, AR: 3 } },
-      { label: "無理せず、今のポジションを守りながら進む", scores: { UC: -3, FD: -1 } },
-      { label: "状況に合わせて攻守を柔軟に切り替える", scores: { UC: 0, LH: -1 } },
-      { label: "ショートスタックを狩りに行く", scores: { UC: 1, AR: 1 } },
+      { label: "毎回違うラインを取って読ませない", scores: { UC: 3, LH: -1 } },
+      { label: "勝ってるパターンを軸にして一貫性を保つ", scores: { UC: -3, LH: 2 } },
+      { label: "相手の調整に合わせてこっちも変える", scores: { UC: 0, LH: 1 } },
+      { label: "読まれる前に先にスタイルを崩す", scores: { UC: 2, FD: 1 } },
     ],
   },
   {
@@ -66,16 +68,79 @@ export const QUESTIONS: Question[] = [
     id: 7,
     text: "ベットサイズ、どうやって決めてる？",
     choices: [
-      { label: "相手を見ながら毎回変える。パターン化はしない", scores: { UC: 2, LH: -1 } },
+      { label: "毎回変える。パターン化はしない", scores: { UC: 3, LH: -1 } },
       { label: "ポット比率を基準にして、理由あるサイジングをする", scores: { UC: -2, LH: 2 } },
-      { label: "感覚で「このサイズが一番嫌だろうな」を選ぶ", scores: { UC: 1, LH: -2 } },
+      { label: "「このサイズが一番嫌だろうな」を感覚で選ぶ", scores: { UC: 1, LH: -2 } },
       { label: "状況別にサイズは事前に決めてある", scores: { UC: -3, FD: -1 } },
     ],
   },
-  // === AR軸（Aggressive vs Reserved）===
   {
     id: 8,
-    text: "フロップでトップペアヒット。でもボードはフラッシュドロー含み。",
+    text: "トーナメント中盤、平均の2倍チップ持ってる。どう立ち回る？",
+    choices: [
+      { label: "この優位を活かしてテーブルを支配する", scores: { UC: 2, AR: 3 } },
+      { label: "無理せず、今のポジションを守りながら進む", scores: { UC: -3, FD: -1 } },
+      { label: "状況に合わせて攻守を柔軟に切り替える", scores: { UC: 0, LH: -1 } },
+      { label: "ショートスタックを狩りに行く", scores: { UC: 1, AR: 1 } },
+    ],
+  },
+  {
+    id: 9,
+    text: "自分のプレーレンジについてどう考えてる？",
+    choices: [
+      { label: "広くて読みにくいレンジが武器になる", scores: { UC: 3, AR: 1 } },
+      { label: "ポジション別に構築した堅いレンジがベース", scores: { UC: -3, LH: 2 } },
+      { label: "相手によってレンジ幅を調整する", scores: { UC: -1, LH: 1 } },
+      { label: "レンジとか細かいこと考えずハンドと状況で判断", scores: { UC: 2, LH: -2 } },
+    ],
+  },
+  {
+    id: 10,
+    text: "負けが続いている日。あなたの対処法は？",
+    choices: [
+      { label: "スタイルを大きく変えて流れを変える", scores: { UC: 3, FD: 2 } },
+      { label: "いつも通りのプレーを続ける。分散の問題", scores: { UC: -3, LH: 2 } },
+      { label: "少しプレーを引き締めて守備的にする", scores: { UC: -2, AR: -1 } },
+      { label: "テーブルを変えるか、その日は切り上げる", scores: { UC: 0, FD: -1 } },
+    ],
+  },
+  {
+    id: 11,
+    text: "セッション中、同じプレーラインを何度も使うことについて。",
+    choices: [
+      { label: "嫌だ。同じことの繰り返しは読まれる", scores: { UC: 3, FD: 1 } },
+      { label: "勝てるラインなら何度でも使うべき", scores: { UC: -3, LH: 1 } },
+      { label: "適度に混ぜながらメインラインは持っておく", scores: { UC: -1, LH: 1 } },
+      { label: "そもそもラインとか意識してない", scores: { UC: 2, LH: -2 } },
+    ],
+  },
+  {
+    id: 12,
+    text: "チェックレイズ。どういう頻度で使う？",
+    choices: [
+      { label: "相手の意表を突けるからよく使う", scores: { UC: 3, AR: 1 } },
+      { label: "強いハンドの時だけ、しっかりバリュー取る", scores: { UC: -2, AR: 0 } },
+      { label: "数学的に正しい場面でのみ使う", scores: { UC: -2, LH: 2 } },
+      { label: "あんまり使わない。素直に打つ方が好き", scores: { UC: -1, AR: -1 } },
+    ],
+  },
+  {
+    id: 13,
+    text: "ミックス戦略（同じ状況で異なるアクションを混ぜる）について。",
+    choices: [
+      { label: "自然にやってる。同じことするのがそもそも嫌", scores: { UC: 3, LH: -1 } },
+      { label: "意識的に取り入れてる。GTO的に正しいから", scores: { UC: -1, LH: 3 } },
+      { label: "状況次第で結果的に変わるだけ", scores: { UC: 0, LH: -1 } },
+      { label: "あまり意識してない。勝てる選択を毎回する", scores: { UC: -2, FD: 1 } },
+    ],
+  },
+
+  // ============================================================
+  //  AR軸（Aggressive vs Reserved）— 13問
+  // ============================================================
+  {
+    id: 14,
+    text: "フロップでトップペアヒット。ボードはフラッシュドロー含み。",
     choices: [
       { label: "でかく打ってドロー勢を追い出す", scores: { AR: 3, FD: 1 } },
       { label: "中くらいのベットでバリューとプロテクション両取り", scores: { AR: 0, LH: 1 } },
@@ -84,7 +149,7 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    id: 9,
+    id: 15,
     text: "ファイナルテーブルのバブル。あなたのスタンスは？",
     choices: [
       { label: "バブルは稼ぎ時。全員にプレッシャーかける", scores: { AR: 3, UC: 2 } },
@@ -94,7 +159,7 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    id: 10,
+    id: 16,
     text: "3ベット。どのくらいの頻度で使ってる？",
     choices: [
       { label: "かなり広いレンジで積極的に3ベットする", scores: { AR: 3, UC: 1 } },
@@ -104,48 +169,111 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    id: 11,
+    id: 17,
     text: "ヘッズアップ。相手がやたらタイトに打ってる。",
     choices: [
       { label: "全ハンドでレイズ。ひたすら圧をかける", scores: { AR: 3, UC: 2 } },
-      { label: "レンジを広げつつもバリューは意識する", scores: { AR: 1, LH: 1 } },
+      { label: "レンジを広げつつバリューは意識する", scores: { AR: 1, LH: 1 } },
       { label: "こっちもタイトに合わせてプレミアムで仕留める", scores: { AR: -2, UC: -2 } },
       { label: "相手がほころぶタイミングを待って仕掛ける", scores: { AR: 1, FD: -2 } },
     ],
   },
   {
-    id: 12,
+    id: 18,
     text: "リバーでブラフキャッチの局面。相手のベットは大きい。",
     choices: [
-      { label: "感覚的にブラフ臭い。コールする", scores: { AR: 1, LH: -2 } },
+      { label: "ブラフ臭い。コールする", scores: { AR: 1, LH: -2 } },
       { label: "ポットオッズとブラフ頻度を計算して判断する", scores: { AR: 0, LH: 3 } },
       { label: "厳しそうなら無理しない。次に切り替える", scores: { AR: -3, FD: 1 } },
       { label: "逆にレイズして圧力を返す", scores: { AR: 3, UC: 3 } },
     ],
   },
   {
-    id: 13,
-    text: "プリフロップでレイズしてコールされた。フロップは空振り。Cベットする？",
+    id: 19,
+    text: "フロップ空振り。Cベットする？",
     choices: [
       { label: "ほぼ必ず打つ。アグレッションは最大の武器", scores: { AR: 3, UC: 1 } },
       { label: "ボードの種類で判断。打つ時と打たない時がある", scores: { AR: 1, LH: 2 } },
-      { label: "基本ヒットした時だけ。無駄弾は使わない", scores: { AR: -3, UC: -2 } },
-      { label: "相手のプレー傾向に応じて決める", scores: { AR: -1, FD: -1 } },
+      { label: "基本ヒットした時だけ。無駄弾は撃たない", scores: { AR: -3, UC: -2 } },
+      { label: "相手の傾向に応じて決める", scores: { AR: -1, FD: -1 } },
     ],
   },
   {
-    id: 14,
-    text: "マルチウェイポット（3人以上）での立ち回りは？",
+    id: 20,
+    text: "マルチウェイポット（3人以上）。どうする？",
     choices: [
       { label: "人数関係ない。打つべきと思ったら打つ", scores: { AR: 3, UC: 2 } },
       { label: "ハンドの強さに忠実にバリュー重視で打つ", scores: { AR: 1, LH: 2 } },
       { label: "チェックでポットを抑えて慎重に進める", scores: { AR: -2, FD: -1 } },
-      { label: "他の人のアクションを全部見てから最後に判断する", scores: { AR: -1, LH: -1 } },
+      { label: "他の人の動きを見てから最後に判断する", scores: { AR: -1, LH: -1 } },
     ],
   },
-  // === LH軸（Logical vs Holistic）===
   {
-    id: 15,
+    id: 21,
+    text: "レイトポジションでフォールドが回ってきた。ハンドはまあまあ。",
+    choices: [
+      { label: "スチールするに決まってる。サイズも大きめに", scores: { AR: 3, FD: 1 } },
+      { label: "標準的なオープンレイズでポットを取りに行く", scores: { AR: 1, LH: 1 } },
+      { label: "ブラインドが強そうならフォールドもあり", scores: { AR: -2, LH: 1 } },
+      { label: "リンプで安く見てフロップ勝負", scores: { AR: -2, UC: -1 } },
+    ],
+  },
+  {
+    id: 22,
+    text: "相手がドンクベット（先にベット）してきた。どう感じる？",
+    choices: [
+      { label: "弱い証拠。レイズで返す", scores: { AR: 3, UC: 1 } },
+      { label: "相手のレンジを考えてからリアクション決める", scores: { AR: 0, LH: 2 } },
+      { label: "とりあえずコールして様子見", scores: { AR: -1, FD: -1 } },
+      { label: "強そうならフォールド。無理しない", scores: { AR: -3, FD: 0 } },
+    ],
+  },
+  {
+    id: 23,
+    text: "ポストフロップでポジションがない（OOP）。基本スタンスは？",
+    choices: [
+      { label: "リードベットで主導権を取りに行く", scores: { AR: 3, UC: 1 } },
+      { label: "チェックレイズでトラップを仕掛ける", scores: { AR: 1, UC: 2 } },
+      { label: "チェックコールで情報を引き出す", scores: { AR: -2, LH: 1 } },
+      { label: "基本チェックフォールド。OOPで無理しない", scores: { AR: -3, LH: 0 } },
+    ],
+  },
+  {
+    id: 24,
+    text: "4ベットを受けた。ハンドはAQs。",
+    choices: [
+      { label: "5ベットオールイン。降りる気はない", scores: { AR: 3, UC: 2 } },
+      { label: "コールしてフロップ見てから判断する", scores: { AR: 0, FD: -1 } },
+      { label: "相手のレンジを考えてフォールドする", scores: { AR: -3, LH: 2 } },
+      { label: "相手のプレースタイルによって変える", scores: { AR: -1, LH: 1 } },
+    ],
+  },
+  {
+    id: 25,
+    text: "セミブラフ（ドロー+ベット）。どの程度使う？",
+    choices: [
+      { label: "ドローがあれば積極的にぶつけていく", scores: { AR: 3, FD: 1 } },
+      { label: "オッズが合えば使う。計算ベース", scores: { AR: 1, LH: 2 } },
+      { label: "基本チェックかコールで安くドローを追う", scores: { AR: -2, FD: -1 } },
+      { label: "あまり使わない。完成ハンドで勝負したい", scores: { AR: -3, LH: 0 } },
+    ],
+  },
+  {
+    id: 26,
+    text: "テーブル全体がタイトな時。あなたはどうする？",
+    choices: [
+      { label: "チャンス。レイズ頻度を上げてスチールしまくる", scores: { AR: 3, UC: 1 } },
+      { label: "少しレンジを広げるが無理はしない", scores: { AR: 1, LH: 1 } },
+      { label: "自分もタイトにして大きいポットだけ狙う", scores: { AR: -2, LH: 0 } },
+      { label: "タイトな空気に合わせて待ちの姿勢を取る", scores: { AR: -3, FD: -1 } },
+    ],
+  },
+
+  // ============================================================
+  //  LH軸（Logical vs Holistic）— 12問
+  // ============================================================
+  {
+    id: 27,
     text: "大事なポットでの最終判断。一番頼りにするのは？",
     choices: [
       { label: "オッズとアウツの計算結果", scores: { LH: 3, FD: -1 } },
@@ -155,69 +283,122 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    id: 16,
+    id: 28,
     text: "ポーカーの上達法として一番大事にしてるのは？",
     choices: [
       { label: "ソルバーやGTOツールでの研究", scores: { LH: 3, FD: -2 } },
       { label: "とにかく実戦。場数が一番の教科書", scores: { LH: -1, FD: 2 } },
-      { label: "上手い人のプレーを観て盗む", scores: { LH: -2, AR: 0 } },
-      { label: "コーチング動画やトレーニングサイトで体系的に学ぶ", scores: { LH: 1, UC: -1 } },
+      { label: "上手い人のプレーを観て感覚を盗む", scores: { LH: -2, AR: 0 } },
+      { label: "コーチング動画で体系的に学ぶ", scores: { LH: 1, UC: -1 } },
     ],
   },
   {
-    id: 17,
+    id: 29,
     text: "相手のハンドを読むとき、どうアプローチする？",
     choices: [
-      { label: "プリフロップからのアクションでレンジを論理的に絞る", scores: { LH: 3, FD: -1 } },
+      { label: "プリフロップからのアクションでレンジを絞る", scores: { LH: 3, FD: -1 } },
       { label: "仕草や表情から読み取る", scores: { LH: -3, UC: 1 } },
       { label: "これまでのプレー傾向・クセから推測する", scores: { LH: 1, FD: -1 } },
-      { label: "なんとなく「これ持ってるだろ」と感じ取る", scores: { LH: -2, FD: 2 } },
+      { label: "「これ持ってるだろ」と直感で感じ取る", scores: { LH: -2, FD: 2 } },
     ],
   },
   {
-    id: 18,
+    id: 30,
     text: "セッション後の振り返り。何を一番チェックする？",
     choices: [
-      { label: "EV計算やハンドヒストリーを数値ベースで見直す", scores: { LH: 3, FD: -2 } },
-      { label: "「あそこでメンタルブレたな」という精神面の反省", scores: { LH: -2, UC: 0 } },
-      { label: "キーハンドでの自分の思考プロセスを確認する", scores: { LH: 1, FD: -1 } },
-      { label: "その日のテーブル全体の雰囲気や運の流れ", scores: { LH: -3, AR: 0 } },
+      { label: "EV計算やハンドヒストリーの数値分析", scores: { LH: 3, FD: -2 } },
+      { label: "「あそこでメンタルブレたな」の精神面の反省", scores: { LH: -2, UC: 0 } },
+      { label: "キーハンドでの自分の思考プロセス", scores: { LH: 1, FD: -1 } },
+      { label: "その日のテーブル全体の雰囲気や流れ", scores: { LH: -3, AR: 0 } },
     ],
   },
   {
-    id: 19,
+    id: 31,
     text: "ドローを追うかどうか、何で決める？",
     choices: [
       { label: "インプライドオッズ込みで期待値計算する", scores: { LH: 3, AR: 0 } },
       { label: "「引ける気がする」かどうか", scores: { LH: -3, FD: 2 } },
-      { label: "ポットオッズが合ってるかどうかだけ確認する", scores: { LH: 2, AR: -1 } },
-      { label: "相手が何を持ってそうかで判断する", scores: { LH: -1, FD: -1 } },
+      { label: "ポットオッズが合ってるかどうかだけ見る", scores: { LH: 2, AR: -1 } },
+      { label: "相手が何持ってそうかで判断する", scores: { LH: -1, FD: -1 } },
     ],
   },
   {
-    id: 20,
+    id: 32,
     text: "テーブルで一番目が行く情報は？",
     choices: [
       { label: "各プレーヤーのスタックサイズとポット額", scores: { LH: 3, AR: 0 } },
       { label: "相手の表情、手の動き、姿勢の変化", scores: { LH: -3, UC: 1 } },
-      { label: "ベットサイズの傾向やタイミングのパターン", scores: { LH: 2, FD: -1 } },
+      { label: "ベットサイズの傾向やタイミング", scores: { LH: 2, FD: -1 } },
       { label: "テーブル全体の温度感や空気", scores: { LH: -2, UC: 0 } },
     ],
   },
   {
-    id: 21,
+    id: 33,
     text: "ブラフする時の一番の理由は？",
     choices: [
       { label: "フォールドエクイティが数字的に十分だから", scores: { LH: 3, AR: 1 } },
       { label: "相手が弱気な空気を出してるから", scores: { LH: -3, AR: 1 } },
-      { label: "バランスを保つために一定頻度で混ぜてる", scores: { LH: 2, UC: 0 } },
+      { label: "バランスのために一定頻度で混ぜてる", scores: { LH: 2, UC: 0 } },
       { label: "「今なら通る」って直感が来たから", scores: { LH: -2, FD: 2 } },
     ],
   },
-  // === FD軸（Fast vs Deliberate）===
   {
-    id: 22,
-    text: "でかいポット。リバーで難しい判断。あなたの判断スピードは？",
+    id: 34,
+    text: "GTO（ゲーム理論最適）プレーについてどう思う？",
+    choices: [
+      { label: "ベースとして絶対必要。常に意識してる", scores: { LH: 3, UC: -1 } },
+      { label: "理論は知ってるが実戦では相手を見て崩す", scores: { LH: 1, UC: 1 } },
+      { label: "難しすぎる。経験と感覚の方が使える", scores: { LH: -2, FD: 1 } },
+      { label: "そもそもあんまり興味ない。勝てればいい", scores: { LH: -3, UC: 0 } },
+    ],
+  },
+  {
+    id: 35,
+    text: "ハンド中に「これは罠だ」と感じた。根拠は？",
+    choices: [
+      { label: "ベットラインが不自然。論理的に合わない", scores: { LH: 3, FD: -1 } },
+      { label: "相手の挙動が怪しい。何か違和感がある", scores: { LH: -3, FD: 0 } },
+      { label: "過去に似た状況でやられた経験がある", scores: { LH: 0, FD: -1 } },
+      { label: "なんとなく嫌な予感がする", scores: { LH: -2, FD: 1 } },
+    ],
+  },
+  {
+    id: 36,
+    text: "ポーカーで一番大事なスキルは何だと思う？",
+    choices: [
+      { label: "数学的思考と確率計算", scores: { LH: 3, FD: -1 } },
+      { label: "相手を読む観察力とメンタルの強さ", scores: { LH: -2, AR: 0 } },
+      { label: "場の空気を感じ取るセンス", scores: { LH: -3, UC: 1 } },
+      { label: "状況に応じた柔軟な判断力", scores: { LH: 0, UC: 0 } },
+    ],
+  },
+  {
+    id: 37,
+    text: "HUD（統計ツール）やノートの使い方は？",
+    choices: [
+      { label: "フル活用。データなしでは打てない", scores: { LH: 3, FD: -2 } },
+      { label: "参考にはするが、最終判断は感覚", scores: { LH: -1, FD: 1 } },
+      { label: "あんまり見ない。目の前の状況で判断する", scores: { LH: -2, FD: 2 } },
+      { label: "特定の相手のメモだけ取ってる", scores: { LH: 1, FD: 0 } },
+    ],
+  },
+  {
+    id: 38,
+    text: "エクイティ計算（勝率計算）をハンド中にする？",
+    choices: [
+      { label: "常にざっくり計算してる。基本中の基本", scores: { LH: 3, FD: -1 } },
+      { label: "重要な場面ではするが、毎回ではない", scores: { LH: 1, FD: 0 } },
+      { label: "あまりしない。感覚的に強い弱いで判断", scores: { LH: -2, FD: 2 } },
+      { label: "全くしない。場の雰囲気と読みで勝負", scores: { LH: -3, FD: 1 } },
+    ],
+  },
+
+  // ============================================================
+  //  FD軸（Fast vs Deliberate）— 12問
+  // ============================================================
+  {
+    id: 39,
+    text: "でかいポット。リバーで難しい判断。あなたの速度は？",
     choices: [
       { label: "数秒で決める。長考はテルになる", scores: { FD: 3, UC: 1 } },
       { label: "じっくり時間かけて情報を整理する", scores: { FD: -3, LH: 1 } },
@@ -226,7 +407,7 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    id: 23,
+    id: 40,
     text: "タイムバンク、どう使ってる？",
     choices: [
       { label: "ほぼ使わない。考える前に手が動いてる", scores: { FD: 3, AR: 1 } },
@@ -236,17 +417,17 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    id: 24,
-    text: "プリフロップ。ハンド見てからレイズ判断までの速さは？",
+    id: 41,
+    text: "プリフロップ。ハンド見てからアクションまでの速さは？",
     choices: [
       { label: "ハンド見た瞬間にもう決まってる", scores: { FD: 3, LH: -1 } },
       { label: "テーブル状況をざっと見てから判断する", scores: { FD: -1, LH: 1 } },
       { label: "ポジション・スタック・相手を毎回チェックしてから", scores: { FD: -3, LH: 2 } },
-      { label: "だいたい即決だけど、たまに立ち止まって考える", scores: { FD: 1, LH: -1 } },
+      { label: "だいたい即決だけど、たまに立ち止まる", scores: { FD: 1, LH: -1 } },
     ],
   },
   {
-    id: 25,
+    id: 42,
     text: "マルチテーブル（多面打ち）についてどう思う？",
     choices: [
       { label: "得意。判断早いから何面でもいける", scores: { FD: 3, UC: 0 } },
@@ -256,17 +437,17 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    id: 26,
+    id: 43,
     text: "新しい戦略を覚えた。実戦に投入するタイミングは？",
     choices: [
       { label: "即投入。実戦で試すのが一番早い", scores: { FD: 3, UC: 1 } },
-      { label: "まず練習で十分に固めてから段階的に使う", scores: { FD: -3, LH: 1 } },
+      { label: "まず練習で固めてから段階的に使う", scores: { FD: -3, LH: 1 } },
       { label: "使えそうな場面が来たら自然に使う", scores: { FD: 1, UC: 0 } },
       { label: "理論を完全に理解するまでは使わない", scores: { FD: -2, LH: 2 } },
     ],
   },
   {
-    id: 27,
+    id: 44,
     text: "ショートスタックに追い込まれた。どう対応する？",
     choices: [
       { label: "即座にオールインのチャンスを探す", scores: { FD: 3, AR: 2 } },
@@ -276,13 +457,63 @@ export const QUESTIONS: Question[] = [
     ],
   },
   {
-    id: 28,
+    id: 45,
     text: "ポーカーにおける「運」。あなたの考えは？",
     choices: [
-      { label: "短期は運ゲー、長期は実力。気にしても仕方ない", scores: { FD: 1, LH: 2 } },
-      { label: "流れは確実にある。それを感じ取るのも実力", scores: { FD: -1, LH: -3 } },
+      { label: "短期は運ゲー、長期は実力。気にしない", scores: { FD: 1, LH: 2 } },
+      { label: "流れは確実にある。感じ取るのも実力", scores: { FD: -1, LH: -3 } },
       { label: "運は分散。サンプル数が増えれば収束する", scores: { FD: -1, LH: 3 } },
       { label: "ツイてない時はスタイル変えるべき", scores: { FD: 2, UC: 2 } },
+    ],
+  },
+  {
+    id: 46,
+    text: "オールインの判断。どのくらいの速さで決める？",
+    choices: [
+      { label: "即決。迷ったら負けだと思ってる", scores: { FD: 3, AR: 1 } },
+      { label: "どれだけ慣れた場面でも一度は立ち止まる", scores: { FD: -3, LH: 1 } },
+      { label: "相手や状況による。簡単な時は即決", scores: { FD: 1, LH: 0 } },
+      { label: "常に一定のペースを保つようにしてる", scores: { FD: -1, UC: -1 } },
+    ],
+  },
+  {
+    id: 47,
+    text: "テーブルでの情報処理。あなたのスタイルは？",
+    choices: [
+      { label: "パッと見て直感で判断。細かく考えない", scores: { FD: 3, LH: -2 } },
+      { label: "複数の情報を整理してから結論を出す", scores: { FD: -3, LH: 2 } },
+      { label: "重要な情報だけ拾って素早く判断する", scores: { FD: 1, LH: 0 } },
+      { label: "情報が多すぎると逆に迷う", scores: { FD: 0, LH: -1 } },
+    ],
+  },
+  {
+    id: 48,
+    text: "ポットが小さい場面での判断は？",
+    choices: [
+      { label: "サクサク決めてテンポ重視。考える時間がもったいない", scores: { FD: 3, UC: 0 } },
+      { label: "小さいポットでも丁寧に判断する。積み重ねが大事", scores: { FD: -3, LH: 1 } },
+      { label: "だいたい即決で、たまに気になったら考える", scores: { FD: 1, LH: -1 } },
+      { label: "小さいポットこそミスしやすいから気をつける", scores: { FD: -2, LH: 1 } },
+    ],
+  },
+  {
+    id: 49,
+    text: "判断に迷った時のデフォルトのアクションは？",
+    choices: [
+      { label: "迷ったらアクション。止まるくらいなら攻める", scores: { FD: 3, AR: 2 } },
+      { label: "迷ったらチェックかフォールド。慎重に", scores: { FD: -2, AR: -2 } },
+      { label: "迷った時点で時間を使って考え直す", scores: { FD: -3, LH: 1 } },
+      { label: "迷うこと自体あまりない。感覚ですぐ出る", scores: { FD: 2, LH: -2 } },
+    ],
+  },
+  {
+    id: 50,
+    text: "長時間セッションでの判断の質について。",
+    choices: [
+      { label: "判断速度は変わらない。むしろ後半の方がキレる", scores: { FD: 3, UC: 0 } },
+      { label: "疲れたら意識的にペースを落として精度を維持", scores: { FD: -3, LH: 1 } },
+      { label: "後半は少し雑になるが大きくは崩れない", scores: { FD: 1, UC: 0 } },
+      { label: "長時間は苦手。集中力が切れる前にやめる", scores: { FD: -1, LH: 0 } },
     ],
   },
 ];

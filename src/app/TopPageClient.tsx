@@ -25,8 +25,7 @@ export function TopPageClient() {
             transition={{ duration: 0.7, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
           >
             <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-black tracking-tight leading-none">
-              <span className="text-gold">PK</span>
-              <span className="text-card-white/90">スタイル診断</span>
+              <span className="text-card-white/90">ポーカースタイル診断</span>
             </h1>
           </motion.div>
 
@@ -36,7 +35,7 @@ export function TopPageClient() {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="mt-6 text-lg md:text-xl text-card-white/50 font-display tracking-wide"
           >
-            あなたのポーカースタイルの<span className="text-gold/80">型</span>は？
+            あなたのポーカーの<span className="text-gold/80">型</span>は？
           </motion.p>
 
           <motion.p
@@ -45,9 +44,9 @@ export function TopPageClient() {
             transition={{ duration: 0.6, delay: 0.45 }}
             className="mt-6 text-sm text-card-white/35 max-w-md mx-auto leading-relaxed"
           >
-            28の問いから、あなたの意思決定を4つの軸で分析。
+            50の問いから、あなたの意思決定を4つの軸で分析。
             <br />
-            16タイプの中から、あなただけのPKスタイルを導き出す。
+            16タイプの中から、あなただけのポーカースタイルを導き出す。
           </motion.p>
 
           <motion.div
@@ -66,7 +65,7 @@ export function TopPageClient() {
               </span>
             </Link>
             <p className="mt-4 text-[11px] text-card-white/20 tracking-wider">
-              約5分 / 28問 / 無料
+              約10分 / 50問 / 無料
             </p>
           </motion.div>
         </div>

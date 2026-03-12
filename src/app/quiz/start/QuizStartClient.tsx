@@ -23,10 +23,10 @@ export function QuizStartClient() {
           </h1>
 
           <div className="text-sm text-card-white/50 space-y-3 mb-12">
-            <p>全28問のシチュエーション問題に回答してください。</p>
+            <p>全50問のシチュエーション問題に回答してください。</p>
             <p>正解・不正解はありません。直感で答えてください。</p>
             <p className="font-mono text-xs text-card-white/30">
-              所要時間：約5分
+              所要時間：約10分
             </p>
           </div>
 
@@ -42,7 +42,7 @@ export function QuizStartClient() {
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 border border-gold/30" />
-                <span>28問</span>
+                <span>50問</span>
               </div>
             </div>
 
