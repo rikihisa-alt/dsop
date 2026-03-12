@@ -170,7 +170,7 @@ export function TopPageClient() {
                 transition={{ duration: 0.4, delay: i * 0.08 }}
                 className="relative flex items-center gap-4 px-6 py-5 rounded-sm border border-gold/5 hover:border-gold/15 transition-all duration-500 group bg-felt-dark/20"
               >
-                <span className="font-mono text-xl md:text-2xl font-bold text-gold/25 group-hover:text-gold/60 transition-colors duration-500 shrink-0 w-14 text-center">
+                <span className="font-mono text-xl md:text-2xl font-bold text-gold/25 group-hover:text-gold/60 transition-colors duration-500 shrink-0 w-16 text-center whitespace-nowrap">
                   {item.code}
                 </span>
                 <div className="flex-1 flex items-center justify-between text-sm">
