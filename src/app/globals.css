@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme {
+  --color-emerald-400: #34d399;
+  --color-emerald-500: #10b981;
+  --color-emerald-600: #059669;
+  --color-gold: #d4a853;
+  --color-gold-light: #e8c97a;
+  --color-gold-dark: #b8923e;
+  --color-felt: #1a472a;
+  --color-felt-light: #235e38;
+  --color-felt-dark: #0f2d1a;
+  --color-baize: #0d1f12;
+  --color-card-white: #f5f0e8;
+  --color-card-back: #c41e3a;
+  --color-chip-red: #c41e3a;
+  --color-chip-blue: #1a56db;
+  --color-chip-black: #1c1c1e;
+  --font-family-display: "Playfair Display", Georgia, serif;
+  --font-family-body: "Noto Sans JP", "Helvetica Neue", sans-serif;
+  --font-family-mono: "JetBrains Mono", "Fira Code", monospace;
+}
+
+@layer base {
+  body {
+    @apply bg-baize text-card-white antialiased;
+    font-family: var(--font-family-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-display);
+  }
+}
