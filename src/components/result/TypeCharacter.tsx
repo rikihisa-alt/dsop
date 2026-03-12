@@ -7,28 +7,28 @@ type TypeCharacterProps = {
   className?: string;
 };
 
-const BODY = "#1a1510";
-const SKIN = "#1e1912";
+const BODY = "#2e2822";
+const SKIN = "#3d3530";
 
 type Colors = { primary: string; glow: string };
 
 const TYPE_COLORS: Record<string, Colors> = {
-  UALF: { primary: "#D4A853", glow: "#D4A85318" },
-  UALD: { primary: "#6B9FBB", glow: "#6B9FBB18" },
-  UAHF: { primary: "#E74C3C", glow: "#E74C3C18" },
-  UAHD: { primary: "#9B59B6", glow: "#9B59B618" },
-  URLF: { primary: "#2ECC71", glow: "#2ECC7118" },
-  URLD: { primary: "#4FC3F7", glow: "#4FC3F718" },
-  URHF: { primary: "#AB6FCF", glow: "#AB6FCF18" },
-  URHD: { primary: "#43B87A", glow: "#43B87A18" },
-  CALF: { primary: "#F0A832", glow: "#F0A83218" },
-  CALD: { primary: "#A0AEB8", glow: "#A0AEB818" },
-  CAHF: { primary: "#2E86C1", glow: "#2E86C118" },
-  CAHD: { primary: "#CD7F32", glow: "#CD7F3218" },
-  CRLF: { primary: "#78909C", glow: "#78909C18" },
-  CRLD: { primary: "#C4886A", glow: "#C4886A18" },
-  CRHF: { primary: "#1ABC9C", glow: "#1ABC9C18" },
-  CRHD: { primary: "#5D7B93", glow: "#5D7B9318" },
+  UALF: { primary: "#D4A853", glow: "#D4A85330" },
+  UALD: { primary: "#6B9FBB", glow: "#6B9FBB30" },
+  UAHF: { primary: "#E74C3C", glow: "#E74C3C30" },
+  UAHD: { primary: "#9B59B6", glow: "#9B59B630" },
+  URLF: { primary: "#2ECC71", glow: "#2ECC7130" },
+  URLD: { primary: "#4FC3F7", glow: "#4FC3F730" },
+  URHF: { primary: "#AB6FCF", glow: "#AB6FCF30" },
+  URHD: { primary: "#43B87A", glow: "#43B87A30" },
+  CALF: { primary: "#F0A832", glow: "#F0A83230" },
+  CALD: { primary: "#A0AEB8", glow: "#A0AEB830" },
+  CAHF: { primary: "#2E86C1", glow: "#2E86C130" },
+  CAHD: { primary: "#CD7F32", glow: "#CD7F3230" },
+  CRLF: { primary: "#78909C", glow: "#78909C30" },
+  CRLD: { primary: "#C4886A", glow: "#C4886A30" },
+  CRHF: { primary: "#1ABC9C", glow: "#1ABC9C30" },
+  CRHD: { primary: "#5D7B93", glow: "#5D7B9330" },
 };
 
 /* ── Character SVG fragments ── */
@@ -316,8 +316,8 @@ export function TypeCharacter({ typeCode, className = "" }: TypeCharacterProps) 
         className="w-full h-full"
       >
         {/* Background glow */}
-        <circle cx="80" cy="90" r="65" fill={colors.glow} />
-        <circle cx="80" cy="90" r="45" fill={`${colors.primary}0A`} />
+        <circle cx="80" cy="90" r="70" fill={colors.glow} />
+        <circle cx="80" cy="90" r="50" fill={`${colors.primary}18`} />
 
         {/* Character */}
         <CharacterSvg c={colors.primary} />
