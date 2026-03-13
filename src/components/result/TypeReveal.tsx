@@ -27,7 +27,7 @@ export function TypeReveal({ nameEn, nameJa, code }: TypeRevealProps) {
     <div className="text-center">
       {/* キャラクターアバター */}
       <div className="flex justify-center mb-8">
-        <TypeCharacter typeCode={code} className="w-28 h-36 md:w-36 md:h-44" />
+        <TypeCharacter typeCode={code} className="w-36 h-44 md:w-44 md:h-56" />
       </div>
 
       <motion.p
