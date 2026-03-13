@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { TypeCharacter } from "@/components/result/TypeCharacter";
 
 type TypeRevealProps = {
   nameEn: string;
@@ -25,11 +24,6 @@ export function TypeReveal({ nameEn, nameJa, code }: TypeRevealProps) {
 
   return (
     <div className="text-center">
-      {/* キャラクターアバター */}
-      <div className="flex justify-center mb-8">
-        <TypeCharacter typeCode={code} className="w-36 h-44 md:w-44 md:h-56" />
-      </div>
-
       <motion.p
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}

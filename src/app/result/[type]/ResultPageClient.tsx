@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import type { PokerType, Score } from "@/lib/types";
 import { createEmptyScore } from "@/features/quiz/scorer";
 import { TypeReveal } from "@/components/result/TypeReveal";
+import { TypeCharacter } from "@/components/result/TypeCharacter";
 import { AxisChart } from "@/components/result/AxisChart";
 import { ShareButton } from "@/components/result/ShareButton";
 
@@ -31,6 +32,14 @@ export function ResultPageClient({ typeData }: ResultPageClientProps) {
           nameEn={typeData.nameEn}
           nameJa={typeData.nameJa}
           code={typeData.code}
+        />
+      </section>
+
+      {/* キャラクター — タイプ名と説明の間に大きく表示 */}
+      <section className="flex justify-center px-6 py-12">
+        <TypeCharacter
+          typeCode={typeData.code}
+          className="w-52 h-64 md:w-72 md:h-[22rem] lg:w-80 lg:h-[26rem]"
         />
       </section>
 
